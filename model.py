@@ -42,7 +42,6 @@ class BaseModel(nn.Module):
         return output
     
     def train_smiles(self, smiles, target, verbose=True):
-        #target = self.labels_to_target(target_labels)
         target = torch.tensor(target, dtype=torch.float32)
         onehot = smiles_to_onehot(smiles, max_atoms=self.max_atoms)
         edge = smiles_to_edge(smiles)
