@@ -6,4 +6,4 @@ model.load()
 while True:
     smiles = input("Enter a SMILES string: ")
     output = model.forward_smiles(smiles)
-    print(f"Output: {output}")
+    print(f"Output: {output.item() * 100}% chance of stress response to ATAD5.")
