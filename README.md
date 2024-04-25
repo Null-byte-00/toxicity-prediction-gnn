@@ -5,7 +5,7 @@ the Model is make up of 2 Graph convolutional layers and two linear layers. it w
 ## Dataset
 I used [tox21](https://github.com/deepchem/deepchem/blob/master/datasets/tox21.csv.gz) dataset from [deepchem](https://github.com/deepchem/deepchem/) to train the model
 ## Training the model
-for training the model you can you can run train.py or download the pre-trained model from the release
+for training the model you can you can run train.py or download the pre-trained model from the [release](https://github.com/Null-byte-00/toxicity-prediction-gnn/releases/latest/)
 ## Running the model
 run test_model_cli.py
 ```
