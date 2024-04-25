@@ -24,7 +24,7 @@ class BaseModel(nn.Module):
         self.linear2 = nn.Linear(middle_features, num_outputs)
 
         self.optimizer = SGD(self.parameters(), lr=self.lr)
-        self.criterion = nn.MSELoss() #PoissonNLLLoss()
+        self.criterion = nn.BCELoss() 
 
     def forward(self, x, edge):
         x = self.conv1(x, edge).relu()
@@ -32,7 +32,7 @@ class BaseModel(nn.Module):
         x = self.flatten(x)
         x = self.linear1(x).relu()
         #x = self.dropout(x)
-        x = self.linear2(x).relu()
+        x = self.linear2(x).sigmoid()
         return x
     
     def forward_smiles(self, smiles):
