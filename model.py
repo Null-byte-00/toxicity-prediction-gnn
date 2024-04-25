@@ -18,7 +18,6 @@ class BaseModel(nn.Module):
         self.conv2 = GCNConv(hidden_features, hidden_features)
         self.flatten = nn.Flatten( start_dim=0)
         middle_features = max_atoms * hidden_features
-        print(middle_features)
         self.linear1 = nn.Linear(middle_features, middle_features)
         self.dropout = nn.Dropout(0.1)
         self.linear2 = nn.Linear(middle_features, num_outputs)
